@@ -80,6 +80,10 @@ if (checkForLoginCredentialsInLocalStorage()) {
       .catch(function(error) {
         console.log(error);
       })
+} else {
+    if (window.location.origin == '/dashboard.html'){
+      window.location.assign('/index.html')
+    }
 }
 
 

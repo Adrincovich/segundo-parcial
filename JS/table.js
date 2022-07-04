@@ -1,6 +1,44 @@
-if (window.location.href == '/dashboard.html'){
-    window.location.assign('/index.html')
+function validateCredentials(credentials) {
+    return fetch("https://basic-server-one.vercel.app/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: credentials.email,
+        password: credentials.pass,
+      }),
+    })
+      .then(function(respuesta) {
+        return respuesta.json()
+          .then(function (respuestaJSON) {
+            // Faltan datos
+            if (respuestaJSON.success === false) {
+              return false;
+            }
+            // Datos incorrectos
+            if (respuestaJSON.error === false) {
+              return true;
+            }
+            return false;
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   }
+
+function checkForLoginCredentialsInLocalStorage() {
+  return localStorage.getItem("email") && localStorage.getItem("pass");
+}
+
+if (!checkForLoginCredentialsInLocalStorage()) {
+      window.location.assign('/index.html')
+}
+
+
+
 const logoutUser = document.getElementById('logout');
 logoutUser.addEventListener("click", function(){
     localStorage.clear();
