@@ -1,7 +1,28 @@
 const form = document.getElementById("form");
 const email = document.getElementById("email");
 const pass = document.getElementById("pass");
-form.addEventListener("submit", validateCredentialsOnSubmit);
+
+
+form.addEventListener("submit", function (e){
+  e.preventDefault();
+  const credentials = {
+    email: email.value,
+    pass: pass.value,
+  };
+  validateCredentials(credentials)
+    .then(function(successStatus) {
+      if (successStatus) {
+        saveCredentialsToLocalStorage(credentials)
+        window.location.assign('/dashboard.html')
+      } else {
+        modal.style.display = "block";
+      }
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+})
+;
 
 function saveCredentialsToLocalStorage(credentials) {
   localStorage.setItem("email", credentials.email);
@@ -39,27 +60,6 @@ function validateCredentials(credentials) {
     });
 }
 
-function validateCredentialsOnSubmit(e) {
-  e.preventDefault();
-  const credentials = {
-    email: email.value,
-    pass: pass.value,
-  };
-  validateCredentials(credentials)
-    .then(function(successStatus) {
-      if (successStatus) {
-        saveCredentialsToLocalStorage(credentials)
-        window.location.assign('/dashboard.html')
-      } else {
-       // alert("Usuario incorrecto");
-        modal.style.display = "block";
-       // console.log(successStatus, "todo mal");
-      }
-    })
-    .catch(function(error) {
-      console.log(error);
-    });
-}
 
 function checkForLoginCredentialsInLocalStorage() {
   return localStorage.getItem("email") && localStorage.getItem("pass");
@@ -75,17 +75,11 @@ if (checkForLoginCredentialsInLocalStorage()) {
       .then(function(successStatus) {
         if (successStatus) {
           window.location.assign('/dashboard.html')
-        } else {
-          window.location.assign('/index.html')
         }
       })
       .catch(function(error) {
         console.log(error);
       })
-} else   {
-  if (location.origin == '/dashboard.html'){
-    window.location.assign('/index.html')
-  }
 }
 
 

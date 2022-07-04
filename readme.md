@@ -13,7 +13,7 @@ Creación de una aplicación web utilizando solo HTML, CSS y Javascript. La mism
 - Página de dashboard (tabla con información).
 
 
-##Tecnologias Utilizadas:##
+## Tecnologias Utilizadas:
 * Lenguaje de marcado HTML5<br>
 * Lenguaje de estilos CSS3<br>
 * Lenguaje de programacion JavaScript Vanilla<br>

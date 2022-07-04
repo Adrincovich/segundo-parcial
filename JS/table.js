@@ -1,3 +1,6 @@
+if (window.location.href == '/dashboard.html'){
+    window.location.assign('/index.html')
+  }
 const logoutUser = document.getElementById('logout');
 logoutUser.addEventListener("click", function(){
     localStorage.clear();
@@ -28,5 +31,6 @@ fetch('https://basic-server-one.vercel.app/users')
 .then(function(respuestaJson){
     tabla(respuestaJson);;
 });
+
 
 
