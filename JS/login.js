@@ -8,10 +8,6 @@ function saveCredentialsToLocalStorage(credentials) {
   localStorage.setItem("pass", credentials.pass);
 }
 
-function checkForLoginCredentialsInLocalStorage() {
-  return localStorage.getItem("email") && localStorage.getItem("pass");
-}
-
 function validateCredentials(credentials) {
   return fetch("https://basic-server-one.vercel.app/login", {
     method: "POST",
@@ -21,10 +17,9 @@ function validateCredentials(credentials) {
       password: credentials.pass,
     }),
   })
-    .then((respuesta) => {
-      return respuesta
-        .json()
-        .then((respuestaJSON) => {
+    .then(function(respuesta) {
+      return respuesta.json()
+        .then(function (respuestaJSON) {
           // Faltan datos
           if (respuestaJSON.success === false) {
             return false;
@@ -35,11 +30,11 @@ function validateCredentials(credentials) {
           }
           return false;
         })
-        .catch((error) => {
+        .catch(function(error) {
           console.log(error);
         });
     })
-    .catch((error) => {
+    .catch(function(error) {
       console.log(error);
     });
 }
@@ -51,42 +46,49 @@ function validateCredentialsOnSubmit(e) {
     pass: pass.value,
   };
   validateCredentials(credentials)
-    .then((successStatus) => {
+    .then(function(successStatus) {
       if (successStatus) {
         saveCredentialsToLocalStorage(credentials)
-        window.location.assign('/html/dashboard.html')
+        window.location.assign('/dashboard.html')
       } else {
        // alert("Usuario incorrecto");
         modal.style.display = "block";
        // console.log(successStatus, "todo mal");
       }
     })
-    .catch((error) => {
+    .catch(function(error) {
       console.log(error);
     });
+}
+
+function checkForLoginCredentialsInLocalStorage() {
+  return localStorage.getItem("email") && localStorage.getItem("pass");
 }
 
 if (checkForLoginCredentialsInLocalStorage()) {
-  const credentials = {
-    email: localStorage.getItem("email"),
-    pass: localStorage.getItem("pass"),
-  };
+    const credentials = {
+      email: localStorage.getItem("email"),
+      pass: localStorage.getItem("pass"),
+    };
 
-  validateCredentials(credentials)
-    .then((successStatus) => {
-      if (successStatus) {
-        window.location.assign('/html/dashboard.html')
-      //  console.log(successStatus, "todo bien");
-      } else {
-       
-       // modal.style.display = "block";
-        //console.log(successStatus, "todo mal");
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+    validateCredentials(credentials)
+      .then(function(successStatus) {
+        if (successStatus) {
+          window.location.assign('/dashboard.html')
+        } else {
+          window.location.assign('/index.html')
+        }
+      })
+      .catch(function(error) {
+        console.log(error);
+      })
+} else   {
+  if (location.origin == '/dashboard.html'){
+    window.location.assign('/index.html')
+  }
 }
+
+
 
 
 // Get the modal

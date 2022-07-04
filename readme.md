@@ -1,10 +1,10 @@
 #Segundo Parcial LPPA
 
-##GitHub Pages
+##GitHub Pages##
 >https://adrincovich.github.io/segundo-parcial/
 
 
-##Repositorio HitHub
+##Repositorio HitHub##
 >https://github.com/Adrincovich/segundo-parcial
 
 
@@ -13,7 +13,7 @@ Creación de una aplicación web utilizando solo HTML, CSS y Javascript. La mism
 - Página de dashboard (tabla con información).
 
 
-##Tecnologias Utilizadas:
+##Tecnologias Utilizadas:##
 *Lenguaje de marcado HTML5
 *Lenguaje de estilos CSS3
 *Lenguaje de programacion JavaScript Vanilla
