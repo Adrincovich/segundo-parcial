@@ -1,10 +1,10 @@
-#Segundo Parcial LPPA
+# Segundo Parcial LPPA
 
-##GitHub Pages##
+## GitHub Pages
 >https://adrincovich.github.io/segundo-parcial/
 
 
-##Repositorio HitHub##
+## Repositorio HitHub
 >https://github.com/Adrincovich/segundo-parcial
 
 
@@ -14,11 +14,11 @@ Creación de una aplicación web utilizando solo HTML, CSS y Javascript. La mism
 
 
 ##Tecnologias Utilizadas:##
-*Lenguaje de marcado HTML5
-*Lenguaje de estilos CSS3
-*Lenguaje de programacion JavaScript Vanilla
-*Editor de código Visual Studio Code
-*Sistema de control de versiones Git
+* Lenguaje de marcado HTML5<br>
+* Lenguaje de estilos CSS3<br>
+* Lenguaje de programacion JavaScript Vanilla<br>
+* Editor de código Visual Studio Code<br>
+* Sistema de control de versiones Git<br>
 
 
 
