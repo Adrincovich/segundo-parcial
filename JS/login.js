@@ -13,7 +13,7 @@ form.addEventListener("submit", function (e){
     .then(function(successStatus) {
       if (successStatus) {
         saveCredentialsToLocalStorage(credentials)
-        window.location.assign('/dashboard.html')
+        window.location.assign('./HTML/dashboard.html')
       } else {
         modal.style.display = "block";
       }
@@ -74,7 +74,7 @@ if (checkForLoginCredentialsInLocalStorage()) {
     validateCredentials(credentials)
       .then(function(successStatus) {
         if (successStatus) {
-          window.location.assign('/dashboard.html')
+          window.location.assign('./HTML/dashboard.html')
         }
       })
       .catch(function(error) {
@@ -104,6 +104,7 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 }
+
 //
 //email: valeria@gmail.com
 //password: lppa2022

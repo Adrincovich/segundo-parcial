@@ -2,6 +2,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    height: 100vh;
+}
+
 
 nav {
     position: sticky;
@@ -62,13 +66,16 @@ td {
 }
 
 
-
 /*Estilos formulario Login*/
 
 #login {
-    position: relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
     width: 400px;
-    margin: 200px auto;
+    height: 100vh;
+    margin: auto;
+
 }
 
 #login-head {
@@ -128,6 +135,11 @@ input {
 
 
 /*Estilos footer*/
+
+footer {
+    display: flex;
+    vertical-align: text-bottom;
+}
 
 .copyright {
     display: flex;
