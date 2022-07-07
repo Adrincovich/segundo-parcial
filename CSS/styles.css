@@ -37,7 +37,29 @@ nav {
 }
 
 
-/*Estilos Main*/
+/*Estilos Tabla*/
+
+#id-tabla {
+    height: auto;
+}
+
+.tabla-header {
+    font-weight: bold;
+    color: #000;
+    background-color: rgb(243, 245, 245);
+}
+
+.tabla-body {
+    color: #505350;
+
+}
+
+td {
+    padding: 5px;
+    border: 1px solid #000;
+    width: 100vh;
+
+}
 
 
 
@@ -54,7 +76,7 @@ nav {
     align-content: center;
     text-align: center;
     height: 50px;
-    font-size: 50px;
+    font-size: 45px;
 }
 
 fieldset {
