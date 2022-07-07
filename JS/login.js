@@ -80,12 +80,7 @@ if (checkForLoginCredentialsInLocalStorage()) {
       .catch(function(error) {
         console.log(error);
       })
-} else {
-    if (window.location.origin == '/dashboard.html'){
-      window.location.assign('/index.html')
-    }
 }
-
 
 
 
@@ -113,10 +108,6 @@ window.onclick = function (event) {
 //email: valeria@gmail.com
 //password: lppa2022
 
-// saveCorrectLoginToLocalStorage({
-//   email: credentials.value,
-//   pass: credentials.value,
-// });
 
 // OK
 // {error: false, message: 'User logged'}

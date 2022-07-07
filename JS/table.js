@@ -45,6 +45,14 @@ logoutUser.addEventListener("click", function(){
     window.location.assign("/index.html");
 });
 
+
+fetch('https://basic-server-one.vercel.app/users')
+.then(function(respuesta){
+    return respuesta.json();
+})
+.then(function(respuestaJson){
+    tabla(respuestaJson);
+});
 const tabla = (function (respuestaJson){
     const tableContainer = document.getElementById('tablaContainer');
     for(let i of respuestaJson['data']){
@@ -58,13 +66,7 @@ const tabla = (function (respuestaJson){
         </tr>`
     }
 });
-fetch('https://basic-server-one.vercel.app/users')
-.then(function(respuesta){
-    return respuesta.json();
-})
-.then(function(respuestaJson){
-    tabla(respuestaJson);
-});
+
 
 
 
